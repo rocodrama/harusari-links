@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>하루네 집에 온 물건</title>
+<meta name="description" content="인스타툰 〈하루살이〉 화별 물건 모음">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFBEF;--ink:#1d1d1d;--sub:#8a8175;--card:#fff;--line:#1d1d1d;--yel:#FFE14D}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1f1d1a;--ink:#f3eee4;--sub:#a79f92;--card:#2b2824;--line:#f3eee4;--yel:#e8c93a}}
+*{box-sizing:border-box}body{word-break:keep-all;margin:0;background:var(--bg);color:var(--ink);font-family:Jua,system-ui,sans-serif}
+main{max-width:560px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:30px;margin:8px 0 2px}h1 em{font-style:normal;background:var(--yel);color:#1d1d1d;padding:0 6px;border-radius:6px}
+.lead{color:var(--sub);margin:0 0 14px;font-size:16px}
+.notice{font-size:13px;line-height:1.5;color:var(--sub);border:2px dashed var(--sub);border-radius:12px;padding:10px 12px;margin-bottom:14px}
+input{width:100%;font:inherit;font-size:18px;padding:12px 14px;border:3px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);margin-bottom:16px}
+.card{display:flex;gap:12px;align-items:center;background:var(--card);border:3px solid var(--line);border-radius:18px;padding:10px;margin-bottom:12px;text-decoration:none;color:inherit}
+.card img{width:96px;height:96px;object-fit:cover;border-radius:12px;flex:none;background:#fff}
+.meta{min-width:0;flex:1}.ep{font-size:14px;color:var(--sub)}.item{font-size:21px;margin:2px 0}.prod{font-size:14px;color:var(--sub);line-height:1.35}
+.go{flex:none;background:var(--yel);color:#1d1d1d;border:3px solid var(--line);border-radius:12px;padding:8px 10px;font-size:15px}
+.empty{text-align:center;color:var(--sub);display:none}
+</style></head><body><main>
+<h1>하루네 집에 온 <em>물건</em></h1>
+<p class="lead">〈하루살이〉 화마다 나온 물건을 모았어요 · @harusari.toon</p>
+<div class="notice">이 페이지의 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다. 가격·구성은 쿠팡에서 확인해 주세요.</div>
+<input id="q" type="search" placeholder="물건·화 번호로 찾기 (예: 휴지, 3화)" aria-label="검색">
+<div id="list">
+<a class="card" href="https://link.coupang.com/a/hnvju4JMxU" target="_blank" rel="sponsored noopener" data-k="3화꾸안꾸의배신하루의헤어롤루이본열전도앞머리헤어롤핑크헤어롤"><img src="img/ep3.jpg" alt="하루의 헤어롤" loading="lazy"><div class="meta"><div class="ep">3화 · 꾸안꾸의 배신</div><div class="item">하루의 헤어롤</div><div class="prod">루이본 열전도 앞머리 헤어롤 핑크</div></div><span class="go">보러가기</span></a>
+<a class="card" href="https://link.coupang.com/a/hmPuvzrz0C" target="_blank" rel="sponsored noopener" data-k="2화301호추위수사대송이의문풍지코멧사계절우레탄문풍지3m5개문풍지"><img src="img/ep2.jpg" alt="송이의 문풍지" loading="lazy"><div class="meta"><div class="ep">2화 · 301호 추위 수사대</div><div class="item">송이의 문풍지</div><div class="prod">코멧 사계절 우레탄 문풍지 3M 5개</div></div><span class="go">보러가기</span></a>
+<a class="card" href="https://link.coupang.com/a/hmFVgjvpAq" target="_blank" rel="sponsored noopener" data-k="1-2화행복빌라301호(하)송이의집들이휴지잘풀리는집맥스소프트3겹30m30롤휴지"><img src="img/ep1-2.jpg" alt="송이의 집들이 휴지" loading="lazy"><div class="meta"><div class="ep">1-2화 · 행복빌라 301호 (하)</div><div class="item">송이의 집들이 휴지</div><div class="prod">잘풀리는집 맥스 소프트 3겹 30m 30롤</div></div><span class="go">보러가기</span></a>
+<a class="card" href="https://link.coupang.com/a/hmsP4xDGF2" target="_blank" rel="sponsored noopener" data-k="1-1화행복빌라301호(상)엄마의반찬통락앤락비스프리모듈러밀폐용기910ml2개반찬통"><img src="img/ep1-1.jpg" alt="엄마의 반찬통" loading="lazy"><div class="meta"><div class="ep">1-1화 · 행복빌라 301호 (상)</div><div class="item">엄마의 반찬통</div><div class="prod">락앤락 비스프리 모듈러 밀폐용기 910ml 2개</div></div><span class="go">보러가기</span></a>
+</div>
+<p class="empty" id="empty">찾는 물건이 없어요 🥲</p>
+</main>
+<script>
+const q=document.getElementById('q'),cards=[...document.querySelectorAll('.card')],empty=document.getElementById('empty');
+q.addEventListener('input',()=>{const t=q.value.replace(/\s/g,'').toLowerCase();let n=0;
+cards.forEach(c=>{const ok=!t||c.dataset.k.includes(t);c.style.display=ok?'':'none';n+=ok});empty.style.display=n?'none':'block'});
+</script></body></html>
